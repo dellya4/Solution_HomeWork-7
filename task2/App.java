@@ -3,21 +3,21 @@ import mediator.*;
 
 import java.util.*;
 
-public class App {
+public class App { // Class for using app
     private final ControlTower tower;
     private List<Aircraft> aircrafts;
 
-    public App() {
+    public App() { // Constructor for app which create tower and aircrafts
         tower = new ControlTower();
         aircrafts = new ArrayList<>();
     }
 
-    public void start() {
+    public void start() { // Function which start program
         Aircraft plane1 = new PassengerPlane("P-101", 75, tower);
         Aircraft plane2 = new CargoPlane("C-202", 50, tower);
         Aircraft helicopter = new Helicopter("H-303", 30, tower);
 
-        aircrafts = Arrays.asList(plane1, plane2, helicopter);
+        aircrafts = Arrays.asList(plane1, plane2, helicopter); // Add airplanes to array
 
         for (Aircraft aircraft : aircrafts) {
             tower.registerAircraft(aircraft);
@@ -29,7 +29,7 @@ public class App {
             }
         }
 
-        for (Aircraft aircraft : aircrafts) {
+        for (Aircraft aircraft : aircrafts) { // Check request for line
             if (tower.requestRunway(aircraft)) {
                 System.out.println("[ACTION]: " + aircraft.getId() + " is using the runway...");
                 tower.freeRunway();
@@ -38,6 +38,7 @@ public class App {
             }
         }
 
+        // Some emergency
         System.out.println("\n[SIMULATION]: Helicopter sending MAYDAY...");
         helicopter.send("MAYDAY", tower);
 

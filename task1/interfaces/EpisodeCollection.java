@@ -1,5 +1,5 @@
 package interfaces;
 
-public interface EpisodeCollection {
-    EpisodeIterator createIterator();
+public interface EpisodeCollection { // Interface for EpisodeCollection
+    EpisodeIterator createIterator(); // Function for creating Iterator
 }

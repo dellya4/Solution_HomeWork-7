@@ -2,7 +2,7 @@ package interfaces;
 
 import objects.Episode;
 
-public interface EpisodeIterator {
-    boolean hasNext();
-    Episode next();
+public interface EpisodeIterator { // Interface for EpisodeIterator
+    boolean hasNext(); // Function which check have or no next element
+    Episode next(); // Get next Episode if it has
 }
